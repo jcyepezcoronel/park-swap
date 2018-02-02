@@ -10,8 +10,18 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
+
     </ion-list>
   </ion-content>
+
+  <ion-footer >
+    <button style="background-color: red;" class="item-md-transparent whitecolor" menuClose ion-item item-title no-padding main-menu (click)="logout()">
+        <ion-icon padding-left>
+          <ion-icon name="md-close-circle"></ion-icon>
+        </ion-icon>
+        <span style="font-size: 1.8rem;">Log Out </span>
+      </button>
+  </ion-footer>
 
 </ion-menu>
 

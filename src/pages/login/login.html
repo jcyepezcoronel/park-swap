@@ -1,0 +1,42 @@
+<ion-content padding class="login-content">
+
+  <ion-row class="logo-row">
+    <ion-col width-67>
+      <img class="icon" src="assets/icon/icon.png"/>
+    </ion-col>
+  </ion-row>
+
+  <div class="login-box">
+    <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input formControlName="email" type="email" name="email" placeholder="Your email address" 
+          [class.invalid]="!loginForm.controls.email.valid && blur"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input formControlName="password" type="password" name="password" placeholder="Your password" 
+          [class.invalid]="!loginForm.controls.password.valid && blur"></ion-input>
+      </ion-item>
+
+      <button class="submit-btn" ion-button block type="submit" [disabled]="!loginForm.valid">
+        Login
+      </button>
+
+    </form>
+
+    <button class="link-color" ion-button block clear (click)="goToSignup()">
+      Create a new account
+    </button>
+
+    <button class="register-btn" ion-button block clear (click)="goToResetPassword()">
+      I forgot my password
+    </button>
+  </div>
+</ion-content>
+
+
+
+
